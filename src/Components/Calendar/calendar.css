@@ -18,7 +18,10 @@ tr {
   border-spacing: 0;
   border-collapse: collapse;
   width: 100%;
+  background: linear-gradient(to right, skyblue -50%, purple 150%)
+  
 }
+
 
 .calendar-header {
   border-bottom: dashed 1px;
