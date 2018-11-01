@@ -18,7 +18,7 @@ tr {
   border-spacing: 0;
   border-collapse: collapse;
   width: 100%;
-  background: linear-gradient(to right, skyblue -50%, purple 150%)
+  background: linear-gradient(to right, rgb(255, 255, 255) -50%, rgb(128, 126, 128) 150%)
   
 }
 
