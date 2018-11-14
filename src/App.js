@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Calendar from './Components/Calendar/';
+import Modal from './Components/Modal/Modal';
 
 
 const style = {
@@ -10,14 +11,31 @@ const style = {
 }
 
 class App extends Component {
- onDayClick = (e, day) => {
-   alert(day);
- }
+  
+  state = {
+    show: false
+  }
+  showModal=() => {
+    this.setState({
+      ...this.state,
+      show: !this.state.show
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <Calendar style = {style} width = '302px'
-         onDayClick = {(e, day) => this.onDayClick(e, day)} />
+      <input type='button'
+        onClick={this.showModal}
+        value='Show Modal'/>
+        
+        <Modal
+          onClose={this.showModal}
+          show={this.state.show}>
+        </Modal>
+
+        <Calendar style = {style} width = '302px'/>
+        
       </div>
     );
   }

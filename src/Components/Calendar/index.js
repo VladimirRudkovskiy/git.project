@@ -167,7 +167,7 @@ export default class Calendar extends React.Component {
     this.props.onDayClick && this.props.onDayClick(e, day); //if parent is passing the call we will invok method
   }
 
-  
+
   render() {
     //Map the weekdays 'Sun, Mon, Tue....'
     let weekdays = this.weekdaysShort.map((day) => { //for every day we create a table with a class name 'day'
