@@ -66,12 +66,12 @@ export default class Modal extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() { //run after render component
         document.addEventListener('keyup', this.onKeyUp);
         modalRoot.appendChild(this.el);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount() { //run before render component
         document.removeEventListener('keyup', this.onKeyUp);
         modalRoot.removeChild(this.el);
     }
