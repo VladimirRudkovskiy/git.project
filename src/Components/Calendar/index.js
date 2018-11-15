@@ -1,6 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import'./calendar.css';
+import 'C:/Users/Владимир/react-calendar/src/Components/Modal/Modal.js'
+
+
 export default class Calendar extends React.Component {
   state = {
     dateContext: moment(),

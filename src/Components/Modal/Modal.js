@@ -55,15 +55,13 @@ export default class Modal extends React.Component {
       alert('Text field value is: ' + this.state.value);
     }
   
-    onClose = (e) => {
-        console.log('BUTTON CLICKED');
+    onClose = (e) => { //close component by using 'stopPropagation'
         e.stopPropagation ();
         this.props.onClose && this.props.onClose(e);
     }
 
-    onKeyUp = (e) => {
-        // Lookout for ESC key (27)
-        if (e.which === 27 && this.props.show) {
+    onKeyUp = (e) => { // Lookout for ESC key (27) and Enter key (13)
+        if (e.which === 27 && 13 && this.props.show) {
             this.onClose(e);
         }
     }
@@ -78,7 +76,7 @@ export default class Modal extends React.Component {
         modalRoot.removeChild(this.el);
     }
 
-    onSave = (e) => {
+    onSave = (e) => { //same as onClose method
        e.stopPropagation ();
         this.props.onClose && this.props.onClose(e);
     }
@@ -100,7 +98,7 @@ export default class Modal extends React.Component {
                   
                     {this.props.children}
                     <div style={footerStyle}>
-                        <button onClick={(e) => { this.onClose(e)}}>
+                        <button onClick={(e) => { this.onClose(e)}}> 
                             Close
                         </button>
                         <div style={secondfooterStyle}>
@@ -115,7 +113,7 @@ export default class Modal extends React.Component {
         if (!this.props.show) {
             return null;
         }
-        return ReactDOM.createPortal (
+        return ReactDOM.createPortal ( //portal method to do our popup in front of calendar
             modalUI,
             this.el,
         );

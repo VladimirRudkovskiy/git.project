@@ -22,6 +22,16 @@ class App extends Component {
     });
   }
 
+  onDayClick = (e, day) => {
+    return(
+      <div key = {day}>
+      <a href ='#' onClick={(e)=> (this.showModal(e, day))}>
+        {day}
+      </a>
+    </div>
+    );
+  }
+  
   render() {
     return (
       <div className="App">
@@ -34,7 +44,9 @@ class App extends Component {
           show={this.state.show}>
         </Modal>
 
-        <Calendar style = {style} width = '302px'/>
+
+        <Calendar style = {style} width = '302px'
+          onDayClick={(e, day) => this.onDayClick(e, day)}/>
         
       </div>
     );
